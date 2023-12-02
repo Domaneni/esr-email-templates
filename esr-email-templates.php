@@ -1,13 +1,39 @@
 <?php
 /**
- * Plugin Name: Easy School Registration - Email Templates
- * Plugin URI: https://easyschoolregistration.com/
- * Description: Email Templates module for Easy School Registration system
- * Version: 1.0.2
- * Author: Zbyněk Nedoma
- * Author URI: https://domaneni.cz/
- * License: A "Slug" license name e.g. GPL12
- * Plugin Slug: esr-email-templates
+ * Plugin Name:     Easy School Registration - Email Templates
+ * Plugin URI:      https://easyschoolregistration.com/
+ * Description:     Email Templates module for Easy School Registration system
+ *
+ * Version:         1.0.2
+ * Tested up to:    6.4.1
+ *
+ * Author:          Zbyněk Nedoma
+ * Author URI:      https://domaneni.cz/
+ * Plugin Slug:     esr-email-templates
+ *
+ * Text Domain:     esr-email-templates
+ * Domain Path:     /languages
+ *
+ * License: GPL 3
+ */
+
+/**
+ * Plugin Name:     Easy School Registration
+ * Plugin URI:      https://easyschoolregistration.com/
+ * Description:     Tools to help you run your school better
+ *
+ * Version:         3.9.7
+ * Tested up to:    6.3.2
+ *
+ * Author:          Zbynek Nedoma
+ * Author URI:      https://domaneni.cz
+ * Plugin Slug:     easy-school-registration
+ *
+ * Text Domain:     easy-school-registration
+ * Domain Path:     /languages
+ *
+ * License: GPL 3
+ *
  */
 
 
@@ -145,6 +171,28 @@ if (!class_exists('ESR_Email_Templates')) {
 
             require_once ESRET_PLUGIN_PATH . '/inc/worker/esret-email-templates.worker.php';
             require_once ESRET_PLUGIN_PATH . '/inc/worker/esret-wave.worker.php';
+        }
+
+
+        /**
+         * Load actions
+         *
+         * @access private
+         * @return void
+         */
+        private function init() {
+            add_action( 'init', array( $this, 'load_text_domain' ), 99 );
+        }
+
+
+        /**
+         * Load text domain
+         *
+         * @access public
+         * @return void
+         */
+        public function load_text_domain() {
+            load_plugin_textdomain( 'esr-email-templates', false, dirname(plugin_basename(__FILE__)) . '/languages/' );
         }
 
     }

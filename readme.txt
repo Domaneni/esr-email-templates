@@ -1,4 +1,4 @@
-=== ESR Email Templates ===
+=== Easy School Registration - Email Templates ===
 Contributors: domaneni
 Donate link: https://ko-fi.com/domaneni
 Tags: email, templates, easy school registration, school, registration
@@ -11,13 +11,9 @@ Enhance your Easy School Registration emails with custom templates for every wav
 
 == Description ==
 
+Email Templates is a module for Easy School Registration plugin you can find for free here too. is a tool to help you manage your school registrations.
 
-
-Easy School Registration is a tool to help you manage your school registrations. Add your teachers, waves/semesters and courses, open and close registration at specifed times, keep track of payments and other information in one place. The plugin was originally created for dance schools, but is applicable to all types of schools.
-
-For dance schools, the system automatically pairs partners by their emails and keeps classes balanced. Students can be notified with customizable emails that are sent automatically.
-
-The interactive registration form automatically checks if registration for the wave is open and does not allow registration before that time and date. The form can be customized to match the colors of your website.
+It allows you to create custom email templates and assign them to specific waves. Now you are not stuck with one version of email template is settings.
 
 = Features =
 * Simple & Intuitive
