@@ -10,15 +10,11 @@ class ESRET_Enqueue_Scripts
     public static function add_admin_scripts()
     {
         if (strpos(get_current_screen()->base, ESRET_Template_Emails::MENU_SLUG) !== false) {
+            do_action('esr_scripts_datatable');
+
             wp_enqueue_script('esret_admin_script', ESRET_PLUGIN_URL . 'inc/assets/js/esret-admin.js', ['jquery'], ESRET_VERSION);
             wp_enqueue_style('esret_admin_style', ESRET_PLUGIN_URL . 'inc/assets/css/esret-admin.css', [], ESRET_VERSION);
-
-            wp_enqueue_script('esret_dataTables_script', ESR_PLUGIN_URL . 'libs/datatable/js/jquery.dataTables.js', ['jquery'], ESR_VERSION);
-            wp_enqueue_style('esret_dataTables_bootstrap_style', ESR_PLUGIN_URL . 'libs/datatable/css/dataTables.bootstrap.css', [], ESR_VERSION);
-
-            wp_enqueue_style('esret_admin_bootstrap_style', ESR_PLUGIN_URL . 'libs/bootstrap/css/bootstrap-ofic.css', [], ESR_VERSION);
-            wp_enqueue_script('esrte_bootstrap_script', ESR_PLUGIN_URL . 'libs/bootstrap/js/bootstrap.min.js', ['jquery'], ESR_VERSION);
-        }
+       }
     }
 
 }

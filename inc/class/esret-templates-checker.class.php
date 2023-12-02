@@ -113,7 +113,7 @@ class ESRET_Templates_Checker
 
     private static function esret_check_title($wave_id, $type_id)
     {
-        $email_data = ESRET()->wave_template->esret_get_email_data_by_wave_type(intval($wave_id), $type_id);
+        $email_data = ESRET()->wave_template->esret_get_email_data_by_wave_type(intval($wave_id), intval($type_id));
 
         if (!empty($email_data) && !empty($email_data->email_title)) {
             return $email_data->email_title;
@@ -124,7 +124,7 @@ class ESRET_Templates_Checker
 
     private static function esret_check_body($wave_id, $type_id)
     {
-        $email_data = ESRET()->wave_template->esret_get_email_data_by_wave_type(intval($wave_id), $type_id);
+        $email_data = ESRET()->wave_template->esret_get_email_data_by_wave_type(intval($wave_id), intval($type_id));
 
         if (!empty($email_data) && !empty($email_data->email_body)) {
             return html_entity_decode($email_data->email_body);

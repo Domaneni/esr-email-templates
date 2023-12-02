@@ -7,23 +7,21 @@ if (!defined('ABSPATH')) {
 class ESRET_Database {
 
 	public static function esret_update_db_check() {
-		if (get_site_option('esret_db_version') == null) {
-			self::esret_database_install();
-		} else if (version_compare(get_site_option('esret_db_version'), ESRPC_VERSION, '<')) {
+		if (version_compare(get_site_option('esret_db_version'), ESRET_VERSION, '<')) {
 			self::esret_database_update();
 		}
 	}
 
 
-	private static function esret_database_install() {
+    public static function esret_database_install_callback() {
 		self::esret_create_tables();
 
-		add_option('esret_db_version', ESRPC_VERSION);
+		add_option('esret_db_version', ESRET_VERSION);
 	}
 
 
 	private static function esret_database_update() {
-		update_option('esret_db_version', ESRPC_VERSION);
+		update_option('esret_db_version', ESRET_VERSION);
 	}
 
 
@@ -54,6 +52,5 @@ class ESRET_Database {
 	}
 
 }
-
 
 add_action('plugins_loaded', ['ESRET_Database', 'esret_update_db_check']);
