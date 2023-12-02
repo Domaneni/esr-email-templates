@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:     Easy School Registration - Email Templates
+ * Plugin Name:     ESR - Email Templates
  * Plugin URI:      https://easyschoolregistration.com/
  * Description:     Email Templates module for Easy School Registration system
  *

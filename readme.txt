@@ -1,4 +1,4 @@
-=== Easy School Registration - Email Templates ===
+=== ESR - Email Templates ===
 Contributors: domaneni
 Donate link: https://ko-fi.com/domaneni
 Tags: email, templates, easy school registration, school, registration
