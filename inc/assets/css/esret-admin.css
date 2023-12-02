@@ -9,6 +9,8 @@ li.esret-action a span {
 .esret-tab-title {
 	display: inline-block;
 	margin-right: 5px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 .esret-add-new {
 	margin-left: 4px;
@@ -26,4 +28,17 @@ li.esret-action a span {
 	color: #0073aa;
 	cursor: pointer;
 	outline: 0;
+}
+.esret-email-templates-edit-form {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+.esret-email-templates-edit-form input[type=text] {
+	height: 35px;
+}
+.esret-form-row,
+.esret-form-field {
+	display: flex;
+	gap: 10px;
 }

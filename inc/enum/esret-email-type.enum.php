@@ -15,9 +15,6 @@ class ESRET_Enum_Email_Type
 
     private $items = [];
 
-    /**
-     * @codeCoverageIgnore
-     */
     public function __construct()
     {
         $this->items = [

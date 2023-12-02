@@ -13,13 +13,13 @@ class ESRET_Template_Emails
     {
         $tabs = apply_filters('esret_admin_tabs', [
             'emails_overview' => [
-                'title' => __('Emails Overview', 'esr-email-templates'),
+                'title' => esc_html__('Emails Overview', 'esr-email-templates'),
                 'action' => 'esret_print_emails_overview_tab',
                 'is_hidden' => false,
                 'capability' => 'esret_emails_view',
             ],
             'emails_editor' => [
-                'title' => __('Emails Editor', 'esr-email-templates'),
+                'title' => esc_html__('Emails Editor', 'esr-email-templates'),
                 'action' => 'esret_print_emails_editor_tab',
                 'is_hidden' => true,
                 'capability' => 'esret_emails_edit',
@@ -47,7 +47,7 @@ class ESRET_Template_Emails
 
         ?>
 		<div class="wrap esret-settings">
-			<h1 class="wp-heading-inline"><?php _e('Email Templates', 'esr-email-templates'); ?></h1>
+			<h1 class="wp-heading-inline"><?php esc_html_e('Email Templates', 'esr-email-templates'); ?></h1>
 			<h2 class="nav-tab-wrapper"><?php
                 foreach ($tabs as $tab_key => $tab) {
                     if (!$tab['is_hidden'] && ((isset($tab['capability']) && current_user_can($tab['capability'])) || !isset($tab['capability']))) {
@@ -56,7 +56,7 @@ class ESRET_Template_Emails
                         ]);
                         $active = $active_tab == $tab_key ? ' nav-tab-active' : '';
                         ?>
-						<a href="<?php echo esc_url(remove_query_arg('email_template_id', $tab_url)); ?>" class="nav-tab<?php echo $active; ?>"><?php echo $tab['title']; ?></a>
+						<a href="<?php echo esc_url(remove_query_arg('email_template_id', $tab_url)); ?>" class="nav-tab<?php echo esc_attr($active); ?>"><?php echo esc_html($tab['title']); ?></a>
                         <?php
                     }
                 }

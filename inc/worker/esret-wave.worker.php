@@ -11,6 +11,7 @@ class ESRET_Worker_Wave
     {
         if (isset($data['esret-email-template'])) {
             global $wpdb;
+
             foreach ($data['esret-email-template'] as $key => $email_template) {
                 if (isset($email_template['email_wave_id'])) {
                     if (intval($email_template['email_template_id']) === 0) {

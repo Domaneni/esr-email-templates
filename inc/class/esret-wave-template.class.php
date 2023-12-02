@@ -11,7 +11,7 @@ class ESRET_Wave_Template
     {
         global $wpdb;
         $ids = [];
-        $results = $wpdb->get_results($wpdb->prepare("SELECT we.id, we.email_id, et.email_type FROM {$wpdb->prefix}esret_wave_emails AS we JOIN {$wpdb->prefix}esret_email_templates AS et ON we.email_id = et.id WHERE wave_id = %d", [intval($wave_id)]));
+        $results = $wpdb->get_results($wpdb->prepare("SELECT we.id, we.email_id, et.email_type FROM {$wpdb->prefix}esret_wave_emails AS we JOIN {$wpdb->prefix}esret_email_templates AS et ON we.email_id = et.id WHERE we.wave_id = %d", [intval($wave_id)]));
 
         foreach ($results as $key => $result) {
             $ids[$result->email_type] = [
