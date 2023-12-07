@@ -11,9 +11,9 @@ Enhance your Easy School Registration emails with custom templates for every wav
 
 == Description ==
 
-Email Templates is a module for Easy School Registration plugin you can find for free here too. is a tool to help you manage your school registrations.
+The Email Templates module empowers administrators using [Easy School Registration](https://wordpress.org/plugins/easy-school-registration/) to enhance communication by creating and customizing email templates.
 
-It allows you to create custom email templates and assign them to specific waves. Now you are not stuck with one version of email template is settings.
+Unlike the standard setup, this module enables the creation of multiple email templates and allows their assignment to specific waves, offering greater flexibility and personalization in communication.
 
 = Features =
 * Simple & Intuitive

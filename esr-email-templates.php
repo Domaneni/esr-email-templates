@@ -17,25 +17,6 @@
  * License: GPL 3
  */
 
-/**
- * Plugin Name:     Easy School Registration
- * Plugin URI:      https://easyschoolregistration.com/
- * Description:     Tools to help you run your school better
- *
- * Version:         3.9.7
- * Tested up to:    6.3.2
- *
- * Author:          Zbynek Nedoma
- * Author URI:      https://domaneni.cz
- * Plugin Slug:     easy-school-registration
- *
- * Text Domain:     easy-school-registration
- * Domain Path:     /languages
- *
- * License: GPL 3
- *
- */
-
 
 if (!defined('ABSPATH')) {
     exit;
@@ -91,6 +72,8 @@ if (!class_exists('ESR_Email_Templates')) {
                 self::$instance->includes();
 
                 register_activation_hook(ESRET_PLUGIN_FILE, array('ESRET_Database', 'esret_database_install_callback'));
+
+                self::$instance->init();
 
                 self::$instance->email_template = new ESRET_Email_Template();
                 self::$instance->email_type = new ESRET_Enum_Email_Type();
@@ -195,6 +178,11 @@ if (!class_exists('ESR_Email_Templates')) {
             load_plugin_textdomain( 'esr-email-templates', false, dirname(plugin_basename(__FILE__)) . '/languages/' );
         }
 
+        public static function no_esr_admin_notice_callback() {
+            echo '<div class="notice notice-warning is-dismissible">
+                <p>' . __('For ESR Email Templates to work, please install and activate Easy School Registration plugin.', 'esr-email-templates') . '</p>
+              </div>';
+        }
     }
 }
 
@@ -206,4 +194,6 @@ function ESRET()
 // Get ESR Running.
 if (class_exists('Easy_School_Registration')) {
     ESRET();
+} else {
+    add_action( 'admin_notices', ['ESR_Email_Templates', 'no_esr_admin_notice_callback'] );
 }
